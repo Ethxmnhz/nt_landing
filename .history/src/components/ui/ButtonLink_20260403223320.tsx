@@ -9,19 +9,19 @@ type ButtonLinkProps = {
   className?: string
 }
 
-export function ButtonLink({ to, href, children, variant = 'primary', className = '' }: ButtonLinkProps) {
-  const btnClass = `btn btn-${variant} ${className}`.trim()
+export function ButtonLink({ to, href, children, variant = 'primary' }: ButtonLinkProps) {
+  const className = `btn btn-${variant}`
 
   if (to) {
     return (
-      <Link className={btnClass} to={to}>
+      <Link className={className} to={to}>
         {children}
       </Link>
     )
   }
 
   return (
-    <a className={btnClass} href={href}>
+    <a className={className} href={href}>
       {children}
     </a>
   )

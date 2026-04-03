@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react'
+import { Mail, Phone, Calendar, ArrowRight } from 'lucide-react'
 import { useState } from 'react'
 import { AnimatedSection } from '../components/ui/AnimatedSection'
 import { site } from '../data/siteData'
@@ -174,6 +174,24 @@ export function BookPage() {
               </article>
             </AnimatedSection>
           </div>
+        </div>
+      </section>
+    </>
+  )
+}
+            <div className="about-quote-block">
+              <h2>Your first consultation includes:</h2>
+              <ul className="trust-list">
+                <li><Check size={18} strokeWidth={2.5} className="check-icon" /> Review of daily routines and support systems</li>
+                <li><Check size={18} strokeWidth={2.5} className="check-icon" /> Emotional and energetic assessment</li>
+                <li><Check size={18} strokeWidth={2.5} className="check-icon" /> Personalized recovery recommendations</li>
+                <li><Check size={18} strokeWidth={2.5} className="check-icon" /> No pressure — just honest guidance</li>
+              </ul>
+              <ButtonLink to="/services">
+                Learn More About Services <ArrowRight size={16} style={{ marginLeft: 6 }} />
+              </ButtonLink>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
     </>

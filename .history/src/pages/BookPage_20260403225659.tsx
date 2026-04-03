@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react'
+import { Mail, Phone, Calendar, ArrowRight } from 'lucide-react'
 import { useState } from 'react'
 import { AnimatedSection } from '../components/ui/AnimatedSection'
 import { site } from '../data/siteData'

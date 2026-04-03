@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Leaf, ArrowRight } from 'lucide-react'
 import { navItems, site } from '../../data/siteData'
+import { ButtonLink } from '../ui/ButtonLink'
 
 export function SiteFooter() {
   return (

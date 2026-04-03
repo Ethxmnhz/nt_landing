@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Leaf, ArrowRight } from 'lucide-react'
+import { Leaf } from 'lucide-react'
 import { navItems, site } from '../../data/siteData'
 
 export function SiteFooter() {

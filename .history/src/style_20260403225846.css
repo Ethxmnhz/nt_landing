@@ -159,14 +159,14 @@ ul { list-style: none; }
 }
 
 .btn-outline {
-  background: #ffffff;
+  background: transparent;
   color: var(--primary);
-  border-color: #ffffff;
+  border-color: var(--primary);
 }
 
 .btn-outline:hover {
-  background: #f0fafb;
-  border-color: var(--primary);
+  background: var(--primary-light);
+  border-color: var(--primary-deep);
   transform: translateY(-2px);
 }
 

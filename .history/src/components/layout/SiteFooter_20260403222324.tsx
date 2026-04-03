@@ -1,10 +1,32 @@
 import { Link } from 'react-router-dom'
 import { Leaf, ArrowRight } from 'lucide-react'
 import { navItems, site } from '../../data/siteData'
+import { ButtonLink } from '../ui/ButtonLink'
 
 export function SiteFooter() {
   return (
     <footer className="site-footer">
+      <div className="footer-cta-section">
+        <div className="section-shell">
+          <div className="footer-cta-inner">
+            <div className="footer-cta-text">
+              <p className="section-tag">Start Your Journey</p>
+              <h2>Ready to begin your healing?</h2>
+              <p className="footer-cta-sub">
+                Book a consultation and take the first step toward structured, compassionate
+                recovery support.
+              </p>
+            </div>
+            <div className="footer-cta-actions">
+              <ButtonLink to="/book">Book Consultation</ButtonLink>
+              <ButtonLink href={site.whatsappUrl} variant="outline">
+                WhatsApp
+              </ButtonLink>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="footer-main">
         <div className="section-shell">
           <div className="footer-grid">
