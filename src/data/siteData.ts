@@ -1,19 +1,19 @@
 import type {
-  EventItem,
+  ConsultationStep,
   FaqItem,
+  FounderStoryBlock,
+  HealingPillar,
   NavItem,
-  ProductItem,
   ProgramTier,
-  ResourceItem,
   ServiceItem,
 } from '../types/site'
 
 export const site = {
   name: 'Naturenergy',
   tagline: 'Reset and protect your energetic system naturally',
-  heroTitle: 'Bridging the gap between medical science and ancient wisdom for better recovery.',
+  heroTitle: 'Bridging Medical Science and Ancient Wisdom for Better Recovery',
   heroSubtitle:
-    'I work on the overall aspect of each individual: mental, emotional, and physical. Every first consultation reviews routine, family support, and work environment to understand the complete healing context.',
+    'Holistic healing across your mental, emotional, and physical dimensions — because even with support around you, you can still feel alone.',
   email: 'hello@naturenergy.sg',
   whatsappUrl: 'https://wa.me/6590000000',
   bookingEmailUrl:
@@ -24,19 +24,36 @@ export const navItems: NavItem[] = [
   { label: 'Home', to: '/home' },
   { label: 'About', to: '/about' },
   { label: 'Services', to: '/services' },
-  { label: 'Retreats', to: '/programs' },
+  { label: 'Packages', to: '/packages' },
   { label: 'Story', to: '/story' },
-  { label: 'Events', to: '/events' },
-  { label: 'Resources', to: '/resources' },
   { label: 'FAQ', to: '/faq' },
   { label: 'Contact', to: '/contact' },
+  { label: 'Book Consultation', to: '/book', highlight: true },
+]
+
+export const healingPillars: HealingPillar[] = [
+  {
+    title: 'Chakra Energy Healing',
+    description:
+      'Guided energy healing through your chakra system to restore emotional balance, release energetic blocks, and strengthen inner regulation.',
+  },
+  {
+    title: 'Physical Movement',
+    description:
+      'Simple, practical body movements to rebuild physical confidence, maintain flow between sessions, and reconnect with your body.',
+  },
+  {
+    title: 'Emotional Support',
+    description:
+      'Tools and practices to reduce isolation, improve day-to-day emotional steadiness, and build genuine resilience through difficult phases.',
+  },
 ]
 
 export const services: ServiceItem[] = [
   {
     title: 'Energy Mapping Consultation',
     description:
-      'Deep initial evaluation of lifestyle, emotional environment, and recovery pressure points before any session plan begins.',
+      'Deep initial evaluation of your lifestyle, emotional environment, and recovery pressure points before any session plan begins.',
   },
   {
     title: 'Chakra Energy Rebalancing',
@@ -46,7 +63,7 @@ export const services: ServiceItem[] = [
   {
     title: 'Recovery Movement Practice',
     description:
-      'Simple and practical body movements used to improve physical confidence and maintain flow between sessions.',
+      'Simple and practical body movements to improve physical confidence and maintain energy flow between sessions.',
   },
   {
     title: 'Emotional Support Coaching',
@@ -55,70 +72,90 @@ export const services: ServiceItem[] = [
   },
 ]
 
+export const consultationProcess: ConsultationStep[] = [
+  {
+    step: 1,
+    title: 'Assess',
+    description:
+      'We review your daily routines, family support, work environment, and emotional landscape to understand your complete healing context.',
+  },
+  {
+    step: 2,
+    title: 'Heal',
+    description:
+      'Personalized sessions combining chakra healing, physical movement, and emotional support tools tailored to your recovery phase.',
+  },
+  {
+    step: 3,
+    title: 'Integrate',
+    description:
+      'Build sustainable self-management practices so your healing continues long after our sessions together.',
+  },
+]
+
 export const programs: ProgramTier[] = [
   {
-    name: 'Foundation Reset',
+    name: '5-Session Package',
     sessions: '5 sessions',
-    summary: 'Ideal first package to stabilize energy and create basic recovery rhythm.',
-    focus: ['Baseline emotional support', 'Daily routine reset', 'Core chakra balancing'],
+    summary:
+      'Ideal first package to stabilize energy and create a basic recovery rhythm.',
+    ideal: 'Best for people beginning their healing journey',
+    focus: [
+      'Baseline emotional support',
+      'Daily routine reset',
+      'Core chakra balancing',
+    ],
   },
   {
-    name: 'Recovery Integration',
+    name: '8-Session Package',
     sessions: '8 sessions',
-    summary: 'Balanced package for deeper healing momentum across body, mind, and energy.',
-    focus: ['Movement progression', 'Structured emotional practices', 'Energetic strengthening'],
+    summary:
+      'Balanced package for deeper healing momentum across body, mind, and energy.',
+    ideal: 'Best for people navigating complex recovery phases',
+    focus: [
+      'Movement progression',
+      'Structured emotional practices',
+      'Energetic strengthening',
+    ],
   },
   {
-    name: 'Transformation Support',
+    name: '10-Session Package',
     sessions: '10 sessions',
     summary:
-      'Full-package support for sustained recovery and long-term self-management practices.',
-    focus: ['Long-term care map', 'Lifestyle integration', 'Relapse prevention routines'],
+      'Full support for sustained recovery and long-term self-management practices.',
+    ideal: 'Best for people committed to lasting transformation',
+    focus: [
+      'Long-term care map',
+      'Lifestyle integration',
+      'Self-regulation mastery',
+    ],
   },
 ]
 
-export const events: EventItem[] = [
+export const founderStory: FounderStoryBlock[] = [
   {
-    title: 'Healing Foundations Workshop',
-    format: 'Live group session',
-    status: 'Upcoming',
+    phase: 'The Challenge',
+    title: 'A Life-Changing Moment',
     description:
-      'A guided introduction to energetic self-protection, recovery mindset, and everyday regulation practices.',
+      'A serious accident became the turning point. What began as a physical recovery journey revealed deeper emotional and energetic dimensions that conventional medicine alone could not address.',
   },
   {
-    title: 'Recovery Circle',
-    format: 'Small cohort',
-    status: 'Upcoming',
+    phase: 'The Discovery',
+    title: 'Finding a New Path',
     description:
-      'Safe space sessions for people navigating emotional overwhelm, fatigue, and high-stress life recovery.',
+      'Through personal healing, the connection between medical science and ancient wisdom became clear. Chakra healing, physical movement, and emotional support formed an integrated recovery framework.',
   },
   {
-    title: 'Corporate Wellbeing Talk',
-    format: 'Team event',
-    status: 'By request',
+    phase: 'The Purpose',
+    title: 'Helping Others Heal',
     description:
-      'Practical framework for protecting energy and maintaining mental clarity in demanding work environments.',
-  },
-]
-
-export const resources: ResourceItem[] = [
-  {
-    title: 'Daily Energy Hygiene Checklist',
-    type: 'Guide',
-    description:
-      'Morning and evening system for protecting and resetting your personal energy across a busy day.',
+      'What helped one person recover became a practice dedicated to helping others. Naturenergy was created to support people who feel alone in their healing journey, even when surrounded by caring people.',
   },
   {
-    title: 'Breath + Movement Recovery Protocol',
-    type: 'Practice',
+    phase: 'The Practice',
+    title: 'Practical & Grounded',
     description:
-      'Short method combining breathing and physical movement to regulate overwhelm and improve body confidence.',
-  },
-  {
-    title: 'Recovery Reflection Journal',
-    type: 'Workbook',
-    description:
-      'Journaling framework to track emotional patterns, triggers, and healing progress each week.',
+      'Every session is built on practical experience, relevant certifications, and lived understanding of what it means to recover from adversity. No empty promises — just real, structured support.',
   },
 ]
 
@@ -126,50 +163,26 @@ export const faqs: FaqItem[] = [
   {
     question: 'How many sessions should I start with?',
     answer:
-      'Most people begin with a 5-session package. If your recovery phase is complex, we extend to 8 or 10 sessions.',
+      'Most people begin with a 5-session package. If your recovery phase is more complex or you want deeper work, we extend to 8 or 10 sessions based on your needs and pace.',
   },
   {
-    question: 'Is this approach practical or spiritual?',
+    question: 'Is this approach spiritual, practical, or both?',
     answer:
-      'It is both practical and energetic. Sessions include real routine changes, movement practices, and emotional support tools.',
+      'It is both practical and energetic. Sessions include real routine changes, movement practices, emotional support tools, and chakra-based healing. The approach bridges medical understanding with ancient wisdom.',
   },
   {
-    question: 'Do you have testimonials?',
+    question: 'What happens in the first consultation?',
     answer:
-      'Not yet. This practice is in an early growth phase and testimonials will be added as clients complete journeys.',
-  },
-]
-
-export const featuredProducts: ProductItem[] = [
-  { title: 'Generating Flow', category: 'Meditations', price: '$25.00' },
-  { title: 'Generating Joy', category: 'Meditations', price: '$25.00' },
-  { title: 'Progressive Online Course', category: 'Courses', price: '$349.00' },
-  { title: 'Believing, Behaving, Becoming Abundance', category: 'Courses', price: '$349.00' },
-]
-
-export const upcomingRetreats = [
-  'Aurora, Colorado - Week Long Retreat - April 04-10, 2026',
-  'Texas - Week Long Retreat - May 10-16, 2026',
-  'Riviera Maya - Advanced Follow Up Retreat - June 08-17, 2026',
-]
-
-export const homeHighlights = [
-  {
-    title: 'Read Naturenergy Blog',
-    description:
-      'Educational posts covering mindset, energy hygiene, emotional regulation, and healing practices.',
-    cta: 'View All Blogs',
+      'During the first consultation, I review your daily routines, family support system, work environment, and emotional state to understand your complete healing context. This helps me design a personalized session plan.',
   },
   {
-    title: 'Naturenergy Live',
-    description:
-      'Join member livestream sessions for direct guidance, questions, and practical walkthroughs.',
-    cta: 'Join Naturenergy Live',
+    question: 'Is this suitable for people in emotional recovery?',
+    answer:
+      'Absolutely. This work is specifically designed for people navigating emotional overwhelm, fatigue, isolation, and high-stress life recovery. Even if you have supportive people around you, you may still feel alone — this practice addresses that directly.',
   },
   {
-    title: 'Stories of Transformation',
-    description:
-      'Real journeys of people moving from adversity into strength, clarity, and meaningful recovery.',
-    cta: 'View All Stories',
+    question: 'How do I book a consultation?',
+    answer:
+      'You can book through email at hello@naturenergy.sg or send a direct WhatsApp message. We will respond to discuss your situation and find a suitable time for your first session.',
   },
 ]

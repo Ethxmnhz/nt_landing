@@ -1,12 +1,14 @@
 export type NavItem = {
   label: string
   to: string
+  highlight?: boolean
 }
 
 export type ProgramTier = {
   name: string
   sessions: string
   summary: string
+  ideal: string
   focus: string[]
 }
 
@@ -15,26 +17,24 @@ export type ServiceItem = {
   description: string
 }
 
-export type ResourceItem = {
-  title: string
-  type: string
-  description: string
-}
-
-export type EventItem = {
-  title: string
-  format: string
-  status: string
-  description: string
-}
-
 export type FaqItem = {
   question: string
   answer: string
 }
 
-export type ProductItem = {
+export type ConsultationStep = {
+  step: number
   title: string
-  category: string
-  price: string
+  description: string
+}
+
+export type FounderStoryBlock = {
+  phase: string
+  title: string
+  description: string
+}
+
+export type HealingPillar = {
+  title: string
+  description: string
 }
