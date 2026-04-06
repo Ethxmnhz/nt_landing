@@ -70,6 +70,7 @@ const heroStyles = `
   content: '';
   position: absolute;
   inset: 0;
+  pointer-events: none;
   background:
     radial-gradient(circle at 16% 22%, rgba(8, 145, 178, 0.16) 0, transparent 28%),
     radial-gradient(circle at 82% 78%, rgba(212, 175, 55, 0.12) 0, transparent 24%);
