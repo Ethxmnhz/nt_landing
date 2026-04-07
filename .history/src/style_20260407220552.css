@@ -2295,10 +2295,10 @@ ul { list-style: none; }
   display: flex;
   gap: 18px;
   overflow-x: auto;
+  scroll-behavior: smooth;
   padding: 10px 8px 14px;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  will-change: scroll-position;
 }
 
 .testimonial-scroll-track::-webkit-scrollbar {
@@ -2319,7 +2319,6 @@ ul { list-style: none; }
   box-shadow: 0 12px 28px rgba(8, 145, 178, 0.1);
   transform: rotate(var(--card-tilt, 0deg));
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-  contain: layout paint;
 }
 
 .testimonial-card:nth-child(odd) {
@@ -2398,6 +2397,15 @@ ul { list-style: none; }
   color: #2a6a76;
   font-size: 0.85rem;
   font-weight: 600;
+}
+
+.testimonial-note {
+  text-align: center;
+  margin-top: 10px;
+  color: rgba(16, 71, 84, 0.72);
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .doc-testimonial-grid {
@@ -3632,6 +3640,11 @@ ul { list-style: none; }
   .testimonial-quote {
     font-size: 1rem;
     line-height: 1.75;
+  }
+
+  .testimonial-note {
+    font-size: 0.74rem;
+    letter-spacing: 0.02em;
   }
 
   .testimonial-scroll-shell::before,

@@ -4,56 +4,15 @@ import {
   Compass,
   ArrowRight,
   ShieldPlus,
+  Leaf,
   HandHeart,
 } from 'lucide-react'
 import { ButtonLink } from '../components/ui/ButtonLink'
 import { AnimatedSection } from '../components/ui/AnimatedSection'
 import { Hero } from '../components/Hero/Hero'
-import { useAutoScroll } from '../components/hooks/useAutoScroll'
 import { site } from '../data/siteData'
 
-const testimonials = [
-  {
-    quote:
-      'Ishita provided a clear and insightful introduction to chakra yoga, which truly sparked my interest. The practical chanting experience was calming to the point where I felt completely relaxed and at ease.',
-    name: 'Ren Hui',
-    role: 'Chakra Yoga Session',
-    avatar: 'https://i.pravatar.cc/120?img=32',
-  },
-  {
-    quote:
-      'Even at 76, this session gave me a strong sense of positivity and deeper spiritual connection. The Maha Mrityunjaya mantra practice was especially powerful and left a lasting impact.',
-    name: 'Chandni',
-    role: 'Maha Mrityunjaya Practice',
-    avatar: 'https://i.pravatar.cc/120?img=5',
-  },
-  {
-    quote:
-      'Ishita guided me through kriya process with great clarity. Her passion, knowledge, and dedication reflect in the way she teaches and supports others.',
-    name: 'Client Review',
-    role: 'Kriya Process',
-    avatar: 'https://i.pravatar.cc/120?img=47',
-    highlight: true,
-  },
-  {
-    quote:
-      'A healthy mind and healthy body go hand in hand. Through self-reflection and yoga, I felt calm and stillness both mentally and physically. I found clarity and confidence to make decisive action.',
-    name: 'Ajay Sodhi',
-    role: 'Mind-Body Clarity Session',
-    avatar: 'https://i.pravatar.cc/120?img=12',
-  },
-  {
-    quote:
-      'Our employees felt calm, balanced, and mentally refreshed after corporate chakra sessions. I highly recommend Ishita for both corporate and individual wellness journeys.',
-    name: 'Burna Kun',
-    role: 'Corporate Wellness Program',
-    avatar: 'https://i.pravatar.cc/120?img=53',
-  },
-]
-
 export function HomePage() {
-  useAutoScroll('testimonialScroll', { speed: 36, pauseOnHover: false, loop: true })
-
   return (
     <>
       {/* ─── PREMIUM HERO SECTION ─── */}
@@ -368,47 +327,80 @@ export function HomePage() {
       </section>
 
       {/* ─── TESTIMONIALS ─── */}
-      <section className="section-light testimonial-section">
+      <section className="section-light">
         <div className="section-shell">
           <AnimatedSection>
             <div className="section-intro centered">
               <p className="section-tag">Testimonials</p>
               <h2>Real People. Real Energy. Real Transformation.</h2>
-              <p className="section-copy">
-                Voices from individuals and teams who experienced more calm, clarity, and grounded
-                energy through this work.
-              </p>
             </div>
           </AnimatedSection>
-          <AnimatedSection>
-            <div className="testimonial-scroll-shell">
-              <div
-                className="testimonial-scroll-track"
-                id="testimonialScroll"
-                data-scroll-loop="segment"
-                data-scroll-repeats="3"
-                aria-label="Client testimonials auto-scrolling carousel"
-              >
-                {[...testimonials, ...testimonials, ...testimonials].map((item, index) => (
-                  <article
-                    key={`${item.name}-${index}`}
-                    className={`testimonial-card${item.highlight ? ' testimonial-card-highlight' : ''}`}
-                  >
-                    <p className="testimonial-quote">“{item.quote}”</p>
-                    <div className="testimonial-meta">
-                      <div className="testimonial-avatar">
-                        <img src={item.avatar} alt={`${item.name} profile`} loading="lazy" />
-                      </div>
-                      <div>
-                        <p className="testimonial-name">{item.name}</p>
-                        <p className="testimonial-role">{item.role}</p>
-                      </div>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </AnimatedSection>
+          <div className="doc-testimonial-grid" id="testimonialScroll">
+            <AnimatedSection delay={0}>
+              <article className="doc-testimonial-card">
+                <div className="testimonial-avatar">
+                  <div className="avatar-circle" style={{background: 'linear-gradient(135deg, #0891b2, #0e7490)'}}></div>
+                </div>
+                <p>
+                  "Ishita provided a clear and insightful introduction to chakra yoga, which truly
+                  sparked my interest. The practical chanting experience was calming to the point
+                  where I felt completely relaxed and at ease."
+                </p>
+                <p className="doc-sign">Ren Hui</p>
+              </article>
+            </AnimatedSection>
+            <AnimatedSection delay={80}>
+              <article className="doc-testimonial-card">
+                <div className="testimonial-avatar">
+                  <div className="avatar-circle" style={{background: 'linear-gradient(135deg, #d4af37, #f59e0b)'}}></div>
+                </div>
+                <p>
+                  "Even at 76, this session gave me a strong sense of positivity and deeper
+                  spiritual connection. The Maha Mrityunjaya mantra practice was especially powerful
+                  and left a lasting impact."
+                </p>
+                <p className="doc-sign">Chandni</p>
+              </article>
+            </AnimatedSection>
+            <AnimatedSection delay={160}>
+              <article className="doc-testimonial-card doc-testimonial-card-highlight">
+                <div className="testimonial-avatar">
+                  <div className="avatar-circle" style={{background: 'linear-gradient(135deg, #8b5cf6, #7c3aed)'}}></div>
+                </div>
+                <p>
+                  "Ishita guided me through kriya process with great clarity. Her passion,
+                  knowledge, and dedication reflect in the way she teaches and supports others."
+                </p>
+                <p className="doc-sign">Client Review</p>
+              </article>
+            </AnimatedSection>
+            <AnimatedSection delay={240}>
+              <article className="doc-testimonial-card">
+                <div className="testimonial-avatar">
+                  <div className="avatar-circle" style={{background: 'linear-gradient(135deg, #06b6d4, #0891b2)'}}></div>
+                </div>
+                <p>
+                  "A healthy mind and healthy body go hand in hand. Through self-reflection and
+                  yoga, I felt calm and stillness both mentally and physically. I found clarity and
+                  confidence to make decisive action."
+                </p>
+                <p className="doc-sign">Ajay Sodhi</p>
+              </article>
+            </AnimatedSection>
+            <AnimatedSection delay={320}>
+              <article className="doc-testimonial-card">
+                <div className="testimonial-avatar">
+                  <div className="avatar-circle" style={{background: 'linear-gradient(135deg, #10b981, #059669)'}}></div>
+                </div>
+                <p>
+                  "Our employees felt calm, balanced, and mentally refreshed after corporate chakra
+                  sessions. I highly recommend Ishita for both corporate and individual wellness
+                  journeys."
+                </p>
+                <p className="doc-sign">Burna Kun</p>
+              </article>
+            </AnimatedSection>
+          </div>
           <AnimatedSection>
             <div className="centered-cta">
               <ButtonLink to="/story" variant="secondary">
@@ -421,3 +413,4 @@ export function HomePage() {
     </>
   )
 }
+

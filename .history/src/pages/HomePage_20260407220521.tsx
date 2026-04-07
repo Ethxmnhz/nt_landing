@@ -4,6 +4,7 @@ import {
   Compass,
   ArrowRight,
   ShieldPlus,
+  Leaf,
   HandHeart,
 } from 'lucide-react'
 import { ButtonLink } from '../components/ui/ButtonLink'
@@ -18,21 +19,18 @@ const testimonials = [
       'Ishita provided a clear and insightful introduction to chakra yoga, which truly sparked my interest. The practical chanting experience was calming to the point where I felt completely relaxed and at ease.',
     name: 'Ren Hui',
     role: 'Chakra Yoga Session',
-    avatar: 'https://i.pravatar.cc/120?img=32',
   },
   {
     quote:
       'Even at 76, this session gave me a strong sense of positivity and deeper spiritual connection. The Maha Mrityunjaya mantra practice was especially powerful and left a lasting impact.',
     name: 'Chandni',
     role: 'Maha Mrityunjaya Practice',
-    avatar: 'https://i.pravatar.cc/120?img=5',
   },
   {
     quote:
       'Ishita guided me through kriya process with great clarity. Her passion, knowledge, and dedication reflect in the way she teaches and supports others.',
     name: 'Client Review',
     role: 'Kriya Process',
-    avatar: 'https://i.pravatar.cc/120?img=47',
     highlight: true,
   },
   {
@@ -40,19 +38,17 @@ const testimonials = [
       'A healthy mind and healthy body go hand in hand. Through self-reflection and yoga, I felt calm and stillness both mentally and physically. I found clarity and confidence to make decisive action.',
     name: 'Ajay Sodhi',
     role: 'Mind-Body Clarity Session',
-    avatar: 'https://i.pravatar.cc/120?img=12',
   },
   {
     quote:
       'Our employees felt calm, balanced, and mentally refreshed after corporate chakra sessions. I highly recommend Ishita for both corporate and individual wellness journeys.',
     name: 'Burna Kun',
     role: 'Corporate Wellness Program',
-    avatar: 'https://i.pravatar.cc/120?img=53',
   },
 ]
 
 export function HomePage() {
-  useAutoScroll('testimonialScroll', { speed: 36, pauseOnHover: false, loop: true })
+  useAutoScroll('testimonialScroll', { speed: 36, pauseOnHover: true, loop: true })
 
   return (
     <>
@@ -385,20 +381,17 @@ export function HomePage() {
               <div
                 className="testimonial-scroll-track"
                 id="testimonialScroll"
-                data-scroll-loop="segment"
-                data-scroll-repeats="3"
+                data-scroll-loop="half"
                 aria-label="Client testimonials auto-scrolling carousel"
               >
-                {[...testimonials, ...testimonials, ...testimonials].map((item, index) => (
+                {[...testimonials, ...testimonials].map((item, index) => (
                   <article
                     key={`${item.name}-${index}`}
                     className={`testimonial-card${item.highlight ? ' testimonial-card-highlight' : ''}`}
                   >
                     <p className="testimonial-quote">“{item.quote}”</p>
                     <div className="testimonial-meta">
-                      <div className="testimonial-avatar">
-                        <img src={item.avatar} alt={`${item.name} profile`} loading="lazy" />
-                      </div>
+                      <div className="testimonial-avatar">{item.name.slice(0, 2).toUpperCase()}</div>
                       <div>
                         <p className="testimonial-name">{item.name}</p>
                         <p className="testimonial-role">{item.role}</p>
@@ -409,6 +402,15 @@ export function HomePage() {
               </div>
             </div>
           </AnimatedSection>
+          <div className="testimonial-note">Hover or touch and hold to pause the movement.</div>
+          <div className="doc-testimonial-grid" aria-hidden="true" hidden>
+            {testimonials.map((item) => (
+              <article key={`fallback-${item.name}`} className="doc-testimonial-card">
+                <p>{item.quote}</p>
+                <p className="doc-sign">{item.name}</p>
+              </article>
+            ))}
+          </div>
           <AnimatedSection>
             <div className="centered-cta">
               <ButtonLink to="/story" variant="secondary">

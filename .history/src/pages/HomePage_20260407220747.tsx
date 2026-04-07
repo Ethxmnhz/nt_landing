@@ -4,6 +4,7 @@ import {
   Compass,
   ArrowRight,
   ShieldPlus,
+  Leaf,
   HandHeart,
 } from 'lucide-react'
 import { ButtonLink } from '../components/ui/ButtonLink'
@@ -52,7 +53,7 @@ const testimonials = [
 ]
 
 export function HomePage() {
-  useAutoScroll('testimonialScroll', { speed: 36, pauseOnHover: false, loop: true })
+  useAutoScroll('testimonialScroll', { speed: 36, pauseOnHover: true, loop: true })
 
   return (
     <>
@@ -385,11 +386,10 @@ export function HomePage() {
               <div
                 className="testimonial-scroll-track"
                 id="testimonialScroll"
-                data-scroll-loop="segment"
-                data-scroll-repeats="3"
+                data-scroll-loop="half"
                 aria-label="Client testimonials auto-scrolling carousel"
               >
-                {[...testimonials, ...testimonials, ...testimonials].map((item, index) => (
+                {[...testimonials, ...testimonials].map((item, index) => (
                   <article
                     key={`${item.name}-${index}`}
                     className={`testimonial-card${item.highlight ? ' testimonial-card-highlight' : ''}`}
@@ -409,6 +409,7 @@ export function HomePage() {
               </div>
             </div>
           </AnimatedSection>
+          <div className="testimonial-note">Hover or touch and hold to pause the movement.</div>
           <AnimatedSection>
             <div className="centered-cta">
               <ButtonLink to="/story" variant="secondary">

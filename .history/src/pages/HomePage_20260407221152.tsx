@@ -4,6 +4,7 @@ import {
   Compass,
   ArrowRight,
   ShieldPlus,
+  Leaf,
   HandHeart,
 } from 'lucide-react'
 import { ButtonLink } from '../components/ui/ButtonLink'
