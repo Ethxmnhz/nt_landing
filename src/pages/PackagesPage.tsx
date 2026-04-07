@@ -1,7 +1,5 @@
-import { ArrowRight, BookOpen, Sparkles, WandSparkles } from 'lucide-react'
+import { BookOpen, Sparkles, WandSparkles } from 'lucide-react'
 import { AnimatedSection } from '../components/ui/AnimatedSection'
-import { ButtonLink } from '../components/ui/ButtonLink'
-
 export function PackagesPage() {
   return (
     <>
@@ -64,46 +62,7 @@ export function PackagesPage() {
         </div>
       </section>
 
-      <section className="section-warm">
-        <div className="section-shell">
-          <AnimatedSection>
-            <div className="section-intro centered">
-              <p className="section-tag">Additional Suggestion</p>
-              <h2>Interactive Quiz Funnel</h2>
-              <p className="section-copy">
-                We can add an interactive quiz section where visitors answer thoughtful
-                psychological questions. Based on responses, they receive personalized results that
-                naturally guide them to book a free consultation.
-              </p>
-              <div className="doc-flow-grid">
-                <article className="doc-flow-step">
-                  <span>01</span>
-                  <h3>Reflect</h3>
-                  <p>Visitors answer guided prompts about current challenges and energy levels.</p>
-                </article>
-                <article className="doc-flow-step">
-                  <span>02</span>
-                  <h3>Reveal</h3>
-                  <p>They receive personalized insight with practical direction and clarity.</p>
-                </article>
-                <article className="doc-flow-step">
-                  <span>03</span>
-                  <h3>Respond</h3>
-                  <p>A contextual CTA invites them to book a consultation with confidence.</p>
-                </article>
-              </div>
-              <div className="hero-actions doc-center-actions" style={{ justifyContent: 'center' }}>
-                <ButtonLink to="/book">
-                  Book Free Consultation <ArrowRight size={16} style={{ marginLeft: 6 }} />
-                </ButtonLink>
-                <ButtonLink to="/contact" variant="secondary">
-                  <Sparkles size={16} style={{ marginRight: 6 }} /> Discuss Product Roadmap
-                </ButtonLink>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+
     </>
   )
 }

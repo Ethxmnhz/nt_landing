@@ -20,9 +20,14 @@ export function BookPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Send to email
-    const mailtoLink = `mailto:${site.email}?subject=Booking Request from ${formData.fullName}&body=Name: ${formData.fullName}%0DEmail: ${formData.email}%0DPhone: ${formData.phone}%0DPreferred Date: ${formData.preferredDate}%0DPreferred Contact: ${formData.preferredContact}%0DSituation: ${formData.situation}`
-    window.location.href = mailtoLink
+    
+    const subject = encodeURIComponent(`Booking Request from ${formData.fullName}`)
+    const body = encodeURIComponent(`Name: ${formData.fullName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nPreferred Date: ${formData.preferredDate}\nPreferred Contact: ${formData.preferredContact}\nSituation: ${formData.situation}`)
+    
+    // Direct Gmail compose link
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${site.email}&su=${subject}&body=${body}`
+    
+    window.open(gmailLink, '_blank')
   }
 
   return (

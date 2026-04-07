@@ -1,6 +1,5 @@
 import {
   ArrowRight,
-  Image,
   Lightbulb,
   ShieldCheck,
   Sparkles,
@@ -38,10 +37,11 @@ export function AboutPage() {
             </AnimatedSection>
             <AnimatedSection delay={100}>
               <article className="doc-photo-frame">
-                <div className="about-visual-placeholder">
-                  <Image size={44} strokeWidth={1.5} />
-                  <p>Ishita Photo</p>
-                </div>
+                <img 
+                  src="/assets/ISHITHA%20PHOTO.jpg" 
+                  alt="Ishita" 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '16px', minHeight: '400px' }} 
+                />
               </article>
             </AnimatedSection>
           </div>

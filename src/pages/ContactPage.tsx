@@ -1,9 +1,18 @@
-import { Mail, MessageCircle, Leaf, ArrowRight } from 'lucide-react'
+import { Mail, MessageCircle, Contact, ArrowRight } from 'lucide-react'
+import { useState } from 'react'
 import { AnimatedSection } from '../components/ui/AnimatedSection'
-import { ButtonLink } from '../components/ui/ButtonLink'
 import { site } from '../data/siteData'
 
 export function ContactPage() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const subject = encodeURIComponent(`Website Inquiry from ${formData.name || 'Visitor'}`)
+    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${site.email}&su=${subject}&body=${body}`
+    window.open(gmailLink, '_blank')
+  }
   return (
     <>
       {/* ─── PAGE HERO ─── */}
@@ -29,11 +38,11 @@ export function ContactPage() {
       <section className="section-light">
         <div className="section-shell">
           <div className="contact-radial-hub">
-            <AnimatedSection delay={0}>
+            <AnimatedSection delay={0} className="contact-hub-wrapper">
               <div className="contact-hub-backdrop" />
               <div className="contact-hub-backdrop" />
               <div className="contact-hub-center">
-                <Leaf size={40} style={{ marginBottom: 8 }} />
+                <Contact size={40} style={{ marginBottom: 8 }} />
                 Let's Connect
               </div>
             </AnimatedSection>
@@ -60,7 +69,7 @@ export function ContactPage() {
               </AnimatedSection>
               <AnimatedSection delay={280}>
                 <article className="contact-radial-card">
-                  <span className="contact-icon"><Leaf size={32} strokeWidth={1.5} /></span>
+                  <span className="contact-icon"><Contact size={32} strokeWidth={1.5} /></span>
                   <h3>Solo Practice</h3>
                   <p>
                     Naturenergy is currently operated by one dedicated practitioner. I personally
@@ -85,15 +94,29 @@ export function ContactPage() {
                   I typically respond within 24–48 hours. For faster response, use WhatsApp.
                 </p>
               </div>
-              <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+              <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="contact-name">Your Name</label>
-                    <input type="text" id="contact-name" placeholder="Full name" />
+                    <input 
+                      type="text" 
+                      id="contact-name" 
+                      placeholder="Full name" 
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      required
+                    />
                   </div>
                   <div className="form-group">
                     <label htmlFor="contact-email">Your Email</label>
-                    <input type="email" id="contact-email" placeholder="email@example.com" />
+                    <input 
+                      type="email" 
+                      id="contact-email" 
+                      placeholder="email@example.com" 
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
+                    />
                   </div>
                 </div>
                 <div className="form-group">
@@ -102,11 +125,14 @@ export function ContactPage() {
                     id="contact-message"
                     rows={5}
                     placeholder="Tell me a bit about what you're looking for..."
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    required
                   />
                 </div>
-                <ButtonLink href={site.bookingEmailUrl}>
+                <button type="submit" className="btn btn-primary">
                   Send Message <ArrowRight size={16} style={{ marginLeft: 6 }} />
-                </ButtonLink>
+                </button>
               </form>
             </div>
           </AnimatedSection>

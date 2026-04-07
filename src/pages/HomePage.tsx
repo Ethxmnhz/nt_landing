@@ -23,7 +23,7 @@ export function HomePage() {
         <div className="section-shell">
           <AnimatedSection delay={0}>
             <div className="section-intro centered meet-ishita-section-intro">
-              
+
               <h2 className="meet-ishita-display">MEET ISHITA</h2>
               <p className="meet-ishita-intro-copy">
                 The story behind the practice and the voice guiding your healing journey.
@@ -35,7 +35,7 @@ export function HomePage() {
             <AnimatedSection delay={50}>
               <article className="meet-ishita-left">
                 <div className="meet-ishita-photo-wrap">
-                  <img src="/assets/hero.jpg" alt="Ishita portrait" className="meet-ishita-photo" />
+                  <img src="/assets/ISHITHA PHOTO.jpg" alt="Ishita portrait" className="meet-ishita-photo" />
                 </div>
                 <h2 className="meet-ishita-headline">
                   Modern medicine gave me one perspective. Ancient Indian wisdom gave me another.
@@ -312,7 +312,6 @@ export function HomePage() {
         <div className="section-shell">
           <AnimatedSection>
             <div className="final-cta-inner doc-ready-panel">
-              <Leaf size={40} strokeWidth={1.5} style={{ marginBottom: 16, opacity: 0.6 }} />
               <p className="section-tag">Ready To Transform?</p>
               <h2>Start from where you are</h2>
               <p>You do not need everything figured out, just the willingness to begin.</p>
